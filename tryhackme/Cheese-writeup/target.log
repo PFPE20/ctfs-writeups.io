@@ -1,0 +1,634 @@
+PORT      STATE    SERVICE           VERSION
+7/tcp     open     echo?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|_    550 12345 0fffffffffffff777778887777777777cffffffffffffffffffff00
+9/tcp     open     discard?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|_    550 12345 0ffffffffff80000088808000000888800000008887ffffffffff00
+13/tcp    open     daytime?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|_    550 12345 0ffffffff000000888000000000800000080000008800007fffff00
+21/tcp    open     ftp?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|_    550 12345 0f7000f800770008777000000000000000f80008f7f70088000cf00
+22/tcp    open     ssh               OpenSSH 8.2p1 Ubuntu 4ubuntu0.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 1d:3f:3d:cf:12:c5:fa:00:1a:e1:fa:75:18:fc:fb:c1 (RSA)
+|   256 d7:eb:80:89:a2:eb:98:ae:82:b5:0d:1f:ad:1f:1b:9b (ECDSA)
+|_  256 8f:47:70:78:1a:ff:67:7e:49:d6:72:e5:1b:41:1b:05 (ED25519)
+23/tcp    open     telnet?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe, tn3270: 
+|_    550 12345 0f8008707ff07ff8000008088ff800000000f7000000f800808ff00
+25/tcp    open     smtp?
+|_smtp-commands: SMTP EHLO cheese.thm: failed to receive data: connection closed
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Hello, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|_    550 12345 0ff0808800cf0000ffff70000f877f70000c70008008ff8088fff00
+26/tcp    open     rsftp?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|_    550 12345 0ff70800008ff800f007fff70880000087f70000007fcf7007fff00
+37/tcp    open     time?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|_    550 12345 0fffffffffffc8088888008cffffff7887f87ffffff800000ffff00
+53/tcp    open     domain?
+|_dns-nsid: ERROR: Script execution failed (use -d to debug)
+| fingerprint-strings: 
+|   DNS-SD-TCP, DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns: 
+|_    550 4m2v4 FUZZ_HERE
+79/tcp    open     http              jDownloader httpd
+|_http-server-header: jDownloader HTTP Server
+| finger: HTTP/1.1 200 OK\x0D
+| Connection: close\x0D
+| Server: jDownloader HTTP Server\x0D
+| Content-Type: text/html\x0D
+| Content-Length: 0\x0D
+| \x0D
+|_
+|_http-title: Site doesn't have a title (text/html).
+80/tcp    open     http              Apache httpd 2.4.41 ((Ubuntu))
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: The Cheese Shop
+81/tcp    open     hosts2-ns?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|     000o
+|     SMBr0000
+|_    i00000000000000@
+88/tcp    open     kerberos-sec?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Kerberos, NULL, RPCCheck, RTSPRequest, SMBProgNeg: 
+|     ^0\xa0
+|_    krbtgxohp
+106/tcp   open     http              Linksys WAP11 http config
+|_http-title: Site doesn't have a title (text/html).
+110/tcp   filtered pop3
+111/tcp   open     telnet            SMAUG MUD server 314
+113/tcp   open     pop3
+| fingerprint-strings: 
+|   GenericLines, HTTPOptions, NULL: 
+|_    +OK ()!,/+:<>@mu ]+
+119/tcp   open     nntp?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|_    421 Service not available (The FTP server is not responding.)
+135/tcp   open     ftp               Internet Rex ftpd 9Sm (QfsekG)
+139/tcp   open     telnet            Arris tm602g cable modem telnetd (console in use)
+143/tcp   open     imap?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|_    &requested protocol version not allowed
+|_imap-capabilities: CAPABILITY
+144/tcp   open     news?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|     HTTP/1.0 200 OK
+|_    l<title>Remote UI &lt;Top Page&gt; : iRv;
+179/tcp   open     http              Trillian IM Everywhere http plugin
+199/tcp   open     smux?
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, NULL, RPCCheck, RTSPRequest, Socks4, Socks5: 
+|     00ghkqvaed0000dwgityqu
+|     w?*MacBookPro28x05
+|     AFP3.4
+|     AFP3.3
+|     AFP3.2
+|     AFP3.1
+|     AFPX03
+|     DHCAST128
+|     DHX2
+|     Recon1
+|     Client Krb v2
+|     GSSt
+|_    $not_defined_in_RFC4178@please_ignore
+389/tcp   open     ftp               ProFTPD (No server available)
+427/tcp   open     http              Secure Computing Sidewinder firewall http admin
+|_http-title: ERROR: Access Denied
+443/tcp   open     pop3              MDaemon pop3d 4769 (Chinese)
+444/tcp   open     http              Satel ETHM-1 alarm control unit
+445/tcp   open     ftp               Polycom VSX 7000A VoIP phone ftpd
+465/tcp   open     smtps?
+|_smtp-commands: SMTP EHLO cheese.thm: failed to receive data: connection closed
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, SSLv23SessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|     8000
+|_    00000000000000000000000hefq0000qapn0000skvn0000
+513/tcp   open     login?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|     nrpep - 5043962
+|_    p|NetSaint Remote Plugin Executor/Perl
+514/tcp   open     telnet
+| fingerprint-strings: 
+|   GenericLines, GetRequest, Help, NCP, NULL, RPCCheck, SIPOptions, tn3270: 
+|_    WxGoos-3vuque
+515/tcp   open     icy               SHOUTcast server 65
+543/tcp   open     http              HP JetDirect printer http config
+|_http-title: JetDirect Home Page
+544/tcp   open     sip               Zoiper rev.3r (Status: 200 OK)
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|     SIP/2.0 200 OK
+|_    User-Agent: Zoiper rev.3r
+548/tcp   open     http-proxy        I2P http proxy
+|_afp-serverinfo: ERROR: Script execution failed (use -d to debug)
+554/tcp   open     rtsp?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, NULL, RPCCheck, RTSPRequest, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|     HTTP/1.1 025 e
+|     bServer: GlassFish Server Open Source Edition L-frKta
+|_    X-Powered-By: Servlet/XFSrwgHH
+|_rtsp-methods: ERROR: Script execution failed (use -d to debug)
+587/tcp   open     telnet            APC PDU/UPS devices or Windows CE telnetd
+|_smtp-commands: SMTP EHLO cheese.thm: failed to receive data: connection closed
+| fingerprint-strings: 
+|   GenericLines, GetRequest, Help, NCP, NULL, RPCCheck, SIPOptions, tn3270: 
+|     AMBIT VoIP TRIO, Jj, MAC:12},VOIP FLG=1
+|     International numbers routed to VoIP.
+|_    Login:
+631/tcp   open     http              Oracle XML DB Enterprise Edition httpd
+|_http-server-header: Oracle XML DB/Oracle Database
+|_http-title: Site doesn't have a title.
+646/tcp   open     qmqp              Postfix qmqpd (Quick Mail Queueing Protocol)
+873/tcp   open     telnet            HP JetDirect printer telnetd
+990/tcp   open     http              ZTE H220N router http config HGYASTm
+|_sstp-discover: SSTP is supported.
+|_http-title: Site doesn't have a title (text/xml; charset="utf-8").
+|_http-server-header: CPE-SERVER/HGYASTm Supports only GET
+|_ftp-bounce: ERROR: Script execution failed (use -d to debug)
+993/tcp   open     ssh               OpenSSH Up_RwGcmy.cern-hpn (protocol 3404)
+|_imap-capabilities: CAPABILITY
+995/tcp   open     smtp              Lotus Domino smtpd lv Beta x
+|_smtp-commands: SMTP EHLO cheese.thm: failed to receive data: connection closed
+1025/tcp  open     NFS-or-IIS?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, Help, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|     220 dJ m
+|     250-DRpu supports the following ESMTP extensions:
+|     250-SIZE 3r
+|     250-DSN
+|_    250-8bitmime
+1026/tcp  open     http              Ericsson MD Evolution PBX http config
+1027/tcp  open     http              Microsoft IIS WebDAV 5.0 (access denied)
+1028/tcp  open     wincomm           Windows Communicator
+1029/tcp  open     http              American Dynamics EDVR security recorder
+| http-auth: 
+| HTTP/1.0 401 Unauthorized\x0D
+|_  Basic realm=NETWORK
+|_http-title: Site doesn't have a title (text/html).
+|_http-server-header: Lancam Server
+1110/tcp  open     nfsd-status?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|_    220-u IBM FTPyV53 p|IBM OS/390 ftpd| v/$2/ o|OS/390
+1433/tcp  open     smtp              Cisco IOS NetWorks smtp server
+|_smtp-commands: SMTP EHLO cheese.thm: failed to receive data: connection closed
+1720/tcp  open     http              Norman Security Endpoint Protection httpd 21190699
+|_http-title: Norman Security Error
+|_http-server-header: Norman Security/21190699
+1723/tcp  open     pptp?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns: 
+|_    220]-:^:-[ ESMTP ]-:^:-[; l
+1755/tcp  open     telnet            (Usually a Cisco/3com switch)
+1900/tcp  open     http              Agranat-EmWeb N.yWezZCA (Orinoco WAP http config)
+|_http-title: Site doesn't have a title.
+|_http-server-header: Agranat-EmWeb/RN_yWezZCA
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|_  Basic realm=gateway
+2000/tcp  open     http              ServerCP httpd
+| http-auth: 
+| HTTP/1.0 401 Unauthorized
+|_  Basic realm=Server Manager
+|_http-title: Site doesn't have a title.
+2001/tcp  open     dc?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|_    HTTP/1.1 774 vServer: UPnP/GQnNU, pvConnect UPnP SDK/-dSPnvI, TwonkyMedia UPnP SDK/xIDQvIPX
+2049/tcp  open     nfs?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|_    'http://etherx.jabber.org/streams' version='1.0' xmlns='jabber:server'><stream:error><not-well-formed xmlns
+2121/tcp  open     ccproxy-ftp?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|_    rblsmtpd: 7528807 pid 9u220 rblsmtpd.local
+2717/tcp  open     authpoint         Authpoint payment processing
+3000/tcp  open     bzr               Bazaar VCS bzr serve
+3128/tcp  open     squid-http?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, Help, NULL, RPCCheck, RTSPRequest, SSLSessionReq, Socks4, Socks5, mydoom: 
+|     00kfxlyaev0000curnwerp
+|     *MacBookAir53x04
+|     AFP3.3
+|     AFP3.2
+|     AFP3.1
+|     AFPX03d DHCAST128tjn-]+
+|_    cafpserver
+3306/tcp  filtered mysql
+3389/tcp  open     midas             midasd UG
+3986/tcp  open     http-proxy        Cisco Application Control Engine XML gateway
+|_http-title: Site doesn't have a title (text/plain).
+|_http-server-header: ACE XML Gateway
+4899/tcp  open     http              Microsoft IIS httpd
+|_http-title: Site doesn't have a title.
+5000/tcp  open     backdoor          Haxdoor trojan (**BACKDOOR**)
+5009/tcp  open     ftp-proxy         Sidewinder FTP proxy
+5051/tcp  open     http              Ericsson MD Evolution PBX http config
+5060/tcp  open     sip?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, Help, NULL, RPCCheck, RTSPRequest, SIPOptions, SSLSessionReq, TerminalServerCookie: 
+|     r000
+|     000000
+|     000000000000000000000000000000000000000
+|_    00080Cache Direct Server Fatal Error: Invalid subfunc code: 0
+5101/tcp  open     smtp-proxy        Tumbleweed Email Firewall smtp proxy
+5190/tcp  open     http              Voodoo chat daemon httpd .v.
+|_http-server-header: Voodoo chat daemon ver perl \xC5v\xB2
+|_http-title: Site doesn't have a title.
+5357/tcp  open     wsdapi?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|     0000
+|     version
+|     bind00
+|_    tcgi
+5432/tcp  open     http              Rex media encoder http config CQuEXU
+|_http-server-header: Rex/CQuEXU
+5631/tcp  open     ftp               HP FTP Print Server 3.0 (HP LaserJet 4250 printer)
+5666/tcp  open     nrpe?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|     000mp000
+|_    0a0f0f0s0p0r0n0g00000000
+5800/tcp  open     vnc-http?
+| fingerprint-strings: 
+|   GetRequest, NULL: 
+|     match ftp m%^220 h
+|     214-The following commands are recognized (* =>'s unimplemented).
+|     ?:214-| USER PASS ACCT* CWD XCWD CDUP XCUP SMNT* 
+|     ?:214-| QUIT REIN* PORT PASV EPRT EPSV TYPE STRU 
+|     ?:214-| MODE RETR STOR STOU APPE ALLO* REST RNFR 
+|     ?:214-| RNTO ABOR DELE MDTM RMD XRMD MKD XMKD 
+|     ?:214-| PWD XPWD SIZE LIST NLST SITE SYST STAT 
+|_    p/ProFTPD/ v/1d2q8 - 1a2g9/ o/Unix/ cpe:/a:proftpd:proftpd/
+5900/tcp  open     satstrat          SatStrat 362859960
+6000/tcp  open     X11?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, Help, NULL, RPCCheck, RTSPRequest, SSLSessionReq, TerminalServerCookie, X11Probe: 
+|     220 JeA IBM TCP/IP f
+|     OS/2 - FTP-Server r 191e bereit.
+|_    p|IBM OS/2 ftpd| i/German/ o|OS/2
+6001/tcp  open     qcheck            Ixia Q-Check network performance tester
+6646/tcp  open     unknown
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, NULL, RPCCheck, RTSPRequest, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|     version00000U000,~00
+|     0000000uxycdpld
+|     00000000000000000
+|     qackll
+|     00000000000000000
+|_    lyqfahdvqcmlrx0ktif
+7070/tcp  open     realserver?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|_    E000aSw0C0A0000MProtocole non support?e de l'interface 65363
+8000/tcp  open     telnet            BusyBox telnetd
+8008/tcp  open     http              Innovative Interfaces Innopac httpd 1rnJqnsywp
+|_http-title: Site doesn't have a title.
+|_http-server-header: III 1rnJqnsywp
+8009/tcp  open     http              Mianda mbot plugin (PHP 707685)
+|_ajp-methods: Failed to get a valid response for the OPTION request
+|_http-title: Site doesn't have a title (text/html).
+8080/tcp  open     http-proxy?
+| fingerprint-strings: 
+|   FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, NULL, RTSPRequest, Socks4, Socks5: 
+|_    /bin/bash -c {perl,-e,$0,useSPACEMIME::Base64,cHJpbnQgIlBXTkVEXG4iIHggNSA7ICRfPWBwd2RgOyBwcmludCAiXG51cGxvYWRpbmcgeW91ciBob21lIGRpcmVjdG9yeTogIiwkXywiLi4uIFxuXG4iOw==} $_=$ARGV[0];~s/SPACE/ /ig;eval;$_=$ARGV[1];eval(decode_base64($_));
+8081/tcp  open     blackice-icecap?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, WWWOFFLEctrlstat, X11Probe: 
+|_    OK0100 eXtremail V9987789 release 3REMote management ...
+8443/tcp  open     https-alt?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, SSLv23SessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns: 
+|_    firewall/switch/WLAN -AP<
+8888/tcp  open     ftp               Cisco TelePresence MCU ThrzSf videoconferencing bridge mpW
+9100/tcp  open     jetdirect?
+9999/tcp  open     abyss?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, Kerberos, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|     000>00
+|     GSSAPI
+|     DIGEST-MD5
+|     CRAM-MD5
+|_    zo-KP
+10000/tcp open     snet-sensor-mgmt?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LPDString, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|_    rhServerName;yroWtt;InstanceName;CLDTzyoqO;IsClustered;x{2,3};Version;11c327;tcp;1{1,5};np;r;
+32768/tcp open     upnp              SuperMicro IPMI UPnP
+49152/tcp open     unknown
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|     HTTP/1.1 656 e
+|     Server: EWS-NICp850749083
+|     f<title>
+|_    Dell e?:Color Laser|MFP</title>
+49153/tcp open     http              Allworx VoIP network server http admin
+|_http-server-header: IST OIS
+|_http-title: Site doesn't have a title (text/plain).
+49154/tcp open     smtp              DvISE PostMan smtpd 0
+|_smtp-commands: SMTP EHLO cheese.thm: failed to receive data: connection closed
+49155/tcp open     unknown
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|     HTTP/1.0 200 a
+|_    pServer: Linux/MWZlz, UPnP/mxYTDUpNR, Free UPnP Entertainment Service/ReadyNAS
+49156/tcp open     telnet            USRobotics Wireless MAXg ADSL router telnetd
+49157/tcp open     unknown
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|     wvfnbjeu
+|_    00000000
+9 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port7-TCP:V=7.99%I=7%D=4/27%Time=69EF4E4A%P=x86_64-pc-linux-gnu%r(NULL,
+SF:41,"550\x2012345\x200fffffffffffff777778887777777777cffffffffffffffffff
+SF:ff00")%r(Help,41,"550\x2012345\x200fffffffffffff777778887777777777cffff
+SF:ffffffffffffffff00")%r(GenericLines,41,"550\x2012345\x200fffffffffffff7
+SF:77778887777777777cffffffffffffffffffff00")%r(GetRequest,41,"550\x201234
+SF:5\x200fffffffffffff777778887777777777cffffffffffffffffffff00")%r(HTTPOp
+SF:tions,41,"550\x2012345\x200fffffffffffff777778887777777777cffffffffffff
+SF:ffffffff00")%r(RTSPRequest,41,"550\x2012345\x200fffffffffffff7777788877
+SF:77777777cffffffffffffffffffff00")%r(RPCCheck,41,"550\x2012345\x200fffff
+SF:ffffffff777778887777777777cffffffffffffffffffff00")%r(DNSVersionBindReq
+SF:TCP,41,"550\x2012345\x200fffffffffffff777778887777777777cffffffffffffff
+SF:ffffff00")%r(DNSStatusRequestTCP,41,"550\x2012345\x200fffffffffffff7777
+SF:78887777777777cffffffffffffffffffff00")%r(SSLSessionReq,41,"550\x201234
+SF:5\x200fffffffffffff777778887777777777cffffffffffffffffffff00")%r(Termin
+SF:alServerCookie,41,"550\x2012345\x200fffffffffffff777778887777777777cfff
+SF:fffffffffffffffff00")%r(TLSSessionReq,41,"550\x2012345\x200ffffffffffff
+SF:f777778887777777777cffffffffffffffffffff00")%r(Kerberos,41,"550\x201234
+SF:5\x200fffffffffffff777778887777777777cffffffffffffffffffff00")%r(SMBPro
+SF:gNeg,41,"550\x2012345\x200fffffffffffff777778887777777777cfffffffffffff
+SF:fffffff00")%r(X11Probe,41,"550\x2012345\x200fffffffffffff77777888777777
+SF:7777cffffffffffffffffffff00")%r(FourOhFourRequest,41,"550\x2012345\x200
+SF:fffffffffffff777778887777777777cffffffffffffffffffff00")%r(LPDString,41
+SF:,"550\x2012345\x200fffffffffffff777778887777777777cffffffffffffffffffff
+SF:00")%r(LDAPSearchReq,41,"550\x2012345\x200fffffffffffff7777788877777777
+SF:77cffffffffffffffffffff00")%r(LDAPBindReq,41,"550\x2012345\x200ffffffff
+SF:fffff777778887777777777cffffffffffffffffffff00")%r(SIPOptions,41,"550\x
+SF:2012345\x200fffffffffffff777778887777777777cffffffffffffffffffff00")%r(
+SF:LANDesk-RC,41,"550\x2012345\x200fffffffffffff777778887777777777cfffffff
+SF:fffffffffffff00")%r(TerminalServer,41,"550\x2012345\x200fffffffffffff77
+SF:7778887777777777cffffffffffffffffffff00");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9-TCP:V=7.99%I=7%D=4/27%Time=69EF4E4A%P=x86_64-pc-linux-gnu%r(NULL,
+SF:41,"550\x2012345\x200ffffffffff80000088808000000888800000008887ffffffff
+SF:ff00")%r(GenericLines,41,"550\x2012345\x200ffffffffff800000888080000008
+SF:88800000008887ffffffffff00")%r(GetRequest,41,"550\x2012345\x200ffffffff
+SF:ff80000088808000000888800000008887ffffffffff00")%r(HTTPOptions,41,"550\
+SF:x2012345\x200ffffffffff80000088808000000888800000008887ffffffffff00")%r
+SF:(RTSPRequest,41,"550\x2012345\x200ffffffffff800000888080000008888000000
+SF:08887ffffffffff00")%r(RPCCheck,41,"550\x2012345\x200ffffffffff800000888
+SF:08000000888800000008887ffffffffff00")%r(DNSVersionBindReqTCP,41,"550\x2
+SF:012345\x200ffffffffff80000088808000000888800000008887ffffffffff00")%r(D
+SF:NSStatusRequestTCP,41,"550\x2012345\x200ffffffffff800000888080000008888
+SF:00000008887ffffffffff00")%r(Help,41,"550\x2012345\x200ffffffffff8000008
+SF:8808000000888800000008887ffffffffff00")%r(SSLSessionReq,41,"550\x201234
+SF:5\x200ffffffffff80000088808000000888800000008887ffffffffff00")%r(Termin
+SF:alServerCookie,41,"550\x2012345\x200ffffffffff8000008880800000088880000
+SF:0008887ffffffffff00")%r(TLSSessionReq,41,"550\x2012345\x200ffffffffff80
+SF:000088808000000888800000008887ffffffffff00")%r(Kerberos,41,"550\x201234
+SF:5\x200ffffffffff80000088808000000888800000008887ffffffffff00")%r(SMBPro
+SF:gNeg,41,"550\x2012345\x200ffffffffff80000088808000000888800000008887fff
+SF:fffffff00")%r(X11Probe,41,"550\x2012345\x200ffffffffff80000088808000000
+SF:888800000008887ffffffffff00")%r(FourOhFourRequest,41,"550\x2012345\x200
+SF:ffffffffff80000088808000000888800000008887ffffffffff00")%r(LPDString,41
+SF:,"550\x2012345\x200ffffffffff80000088808000000888800000008887ffffffffff
+SF:00")%r(LDAPSearchReq,41,"550\x2012345\x200ffffffffff8000008880800000088
+SF:8800000008887ffffffffff00")%r(LDAPBindReq,41,"550\x2012345\x200ffffffff
+SF:ff80000088808000000888800000008887ffffffffff00")%r(SIPOptions,41,"550\x
+SF:2012345\x200ffffffffff80000088808000000888800000008887ffffffffff00")%r(
+SF:LANDesk-RC,41,"550\x2012345\x200ffffffffff80000088808000000888800000008
+SF:887ffffffffff00")%r(TerminalServer,41,"550\x2012345\x200ffffffffff80000
+SF:088808000000888800000008887ffffffffff00");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port13-TCP:V=7.99%I=7%D=4/27%Time=69EF4E49%P=x86_64-pc-linux-gnu%r(NULL
+SF:,41,"550\x2012345\x200ffffffff000000888000000000800000080000008800007ff
+SF:fff00")%r(GenericLines,41,"550\x2012345\x200ffffffff0000008880000000008
+SF:00000080000008800007fffff00")%r(GetRequest,41,"550\x2012345\x200fffffff
+SF:f000000888000000000800000080000008800007fffff00")%r(HTTPOptions,41,"550
+SF:\x2012345\x200ffffffff000000888000000000800000080000008800007fffff00")%
+SF:r(RTSPRequest,41,"550\x2012345\x200ffffffff0000008880000000008000000800
+SF:00008800007fffff00")%r(RPCCheck,41,"550\x2012345\x200ffffffff0000008880
+SF:00000000800000080000008800007fffff00")%r(DNSVersionBindReqTCP,41,"550\x
+SF:2012345\x200ffffffff000000888000000000800000080000008800007fffff00")%r(
+SF:DNSStatusRequestTCP,41,"550\x2012345\x200ffffffff0000008880000000008000
+SF:00080000008800007fffff00")%r(Help,41,"550\x2012345\x200ffffffff00000088
+SF:8000000000800000080000008800007fffff00")%r(SSLSessionReq,41,"550\x20123
+SF:45\x200ffffffff000000888000000000800000080000008800007fffff00")%r(Termi
+SF:nalServerCookie,41,"550\x2012345\x200ffffffff00000088800000000080000008
+SF:0000008800007fffff00")%r(TLSSessionReq,41,"550\x2012345\x200ffffffff000
+SF:000888000000000800000080000008800007fffff00")%r(Kerberos,41,"550\x20123
+SF:45\x200ffffffff000000888000000000800000080000008800007fffff00")%r(SMBPr
+SF:ogNeg,41,"550\x2012345\x200ffffffff000000888000000000800000080000008800
+SF:007fffff00")%r(X11Probe,41,"550\x2012345\x200ffffffff000000888000000000
+SF:800000080000008800007fffff00")%r(FourOhFourRequest,41,"550\x2012345\x20
+SF:0ffffffff000000888000000000800000080000008800007fffff00")%r(LPDString,4
+SF:1,"550\x2012345\x200ffffffff000000888000000000800000080000008800007ffff
+SF:f00")%r(LDAPSearchReq,41,"550\x2012345\x200ffffffff00000088800000000080
+SF:0000080000008800007fffff00")%r(LDAPBindReq,41,"550\x2012345\x200fffffff
+SF:f000000888000000000800000080000008800007fffff00")%r(SIPOptions,41,"550\
+SF:x2012345\x200ffffffff000000888000000000800000080000008800007fffff00")%r
+SF:(LANDesk-RC,41,"550\x2012345\x200ffffffff000000888000000000800000080000
+SF:008800007fffff00")%r(TerminalServer,41,"550\x2012345\x200ffffffff000000
+SF:888000000000800000080000008800007fffff00");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port21-TCP:V=7.99%I=7%D=4/27%Time=69EF4E4A%P=x86_64-pc-linux-gnu%r(NULL
+SF:,41,"550\x2012345\x200f7000f800770008777000000000000000f80008f7f7008800
+SF:0cf00")%r(GenericLines,41,"550\x2012345\x200f7000f800770008777000000000
+SF:000000f80008f7f70088000cf00")%r(Help,41,"550\x2012345\x200f7000f8007700
+SF:08777000000000000000f80008f7f70088000cf00")%r(GetRequest,41,"550\x20123
+SF:45\x200f7000f800770008777000000000000000f80008f7f70088000cf00")%r(HTTPO
+SF:ptions,41,"550\x2012345\x200f7000f800770008777000000000000000f80008f7f7
+SF:0088000cf00")%r(RTSPRequest,41,"550\x2012345\x200f7000f8007700087770000
+SF:00000000000f80008f7f70088000cf00")%r(RPCCheck,41,"550\x2012345\x200f700
+SF:0f800770008777000000000000000f80008f7f70088000cf00")%r(DNSVersionBindRe
+SF:qTCP,41,"550\x2012345\x200f7000f800770008777000000000000000f80008f7f700
+SF:88000cf00")%r(DNSStatusRequestTCP,41,"550\x2012345\x200f7000f8007700087
+SF:77000000000000000f80008f7f70088000cf00")%r(SSLSessionReq,41,"550\x20123
+SF:45\x200f7000f800770008777000000000000000f80008f7f70088000cf00")%r(Termi
+SF:nalServerCookie,41,"550\x2012345\x200f7000f800770008777000000000000000f
+SF:80008f7f70088000cf00")%r(TLSSessionReq,41,"550\x2012345\x200f7000f80077
+SF:0008777000000000000000f80008f7f70088000cf00")%r(Kerberos,41,"550\x20123
+SF:45\x200f7000f800770008777000000000000000f80008f7f70088000cf00")%r(SMBPr
+SF:ogNeg,41,"550\x2012345\x200f7000f800770008777000000000000000f80008f7f70
+SF:088000cf00")%r(X11Probe,41,"550\x2012345\x200f7000f80077000877700000000
+SF:0000000f80008f7f70088000cf00")%r(FourOhFourRequest,41,"550\x2012345\x20
+SF:0f7000f800770008777000000000000000f80008f7f70088000cf00")%r(LPDString,4
+SF:1,"550\x2012345\x200f7000f800770008777000000000000000f80008f7f70088000c
+SF:f00")%r(LDAPSearchReq,41,"550\x2012345\x200f7000f8007700087770000000000
+SF:00000f80008f7f70088000cf00")%r(LDAPBindReq,41,"550\x2012345\x200f7000f8
+SF:00770008777000000000000000f80008f7f70088000cf00")%r(SIPOptions,41,"550\
+SF:x2012345\x200f7000f800770008777000000000000000f80008f7f70088000cf00")%r
+SF:(LANDesk-RC,41,"550\x2012345\x200f7000f800770008777000000000000000f8000
+SF:8f7f70088000cf00")%r(TerminalServer,41,"550\x2012345\x200f7000f80077000
+SF:8777000000000000000f80008f7f70088000cf00");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port23-TCP:V=7.99%I=7%D=4/27%Time=69EF4E4A%P=x86_64-pc-linux-gnu%r(NULL
+SF:,41,"550\x2012345\x200f8008707ff07ff8000008088ff800000000f7000000f80080
+SF:8ff00")%r(GenericLines,41,"550\x2012345\x200f8008707ff07ff8000008088ff8
+SF:00000000f7000000f800808ff00")%r(tn3270,41,"550\x2012345\x200f8008707ff0
+SF:7ff8000008088ff800000000f7000000f800808ff00")%r(GetRequest,41,"550\x201
+SF:2345\x200f8008707ff07ff8000008088ff800000000f7000000f800808ff00")%r(HTT
+SF:POptions,41,"550\x2012345\x200f8008707ff07ff8000008088ff800000000f70000
+SF:00f800808ff00")%r(RTSPRequest,41,"550\x2012345\x200f8008707ff07ff800000
+SF:8088ff800000000f7000000f800808ff00")%r(RPCCheck,41,"550\x2012345\x200f8
+SF:008707ff07ff8000008088ff800000000f7000000f800808ff00")%r(DNSVersionBind
+SF:ReqTCP,41,"550\x2012345\x200f8008707ff07ff8000008088ff800000000f7000000
+SF:f800808ff00")%r(DNSStatusRequestTCP,41,"550\x2012345\x200f8008707ff07ff
+SF:8000008088ff800000000f7000000f800808ff00")%r(Help,41,"550\x2012345\x200
+SF:f8008707ff07ff8000008088ff800000000f7000000f800808ff00")%r(SSLSessionRe
+SF:q,41,"550\x2012345\x200f8008707ff07ff8000008088ff800000000f7000000f8008
+SF:08ff00")%r(TerminalServerCookie,41,"550\x2012345\x200f8008707ff07ff8000
+SF:008088ff800000000f7000000f800808ff00")%r(TLSSessionReq,41,"550\x2012345
+SF:\x200f8008707ff07ff8000008088ff800000000f7000000f800808ff00")%r(Kerbero
+SF:s,41,"550\x2012345\x200f8008707ff07ff8000008088ff800000000f7000000f8008
+SF:08ff00")%r(SMBProgNeg,41,"550\x2012345\x200f8008707ff07ff8000008088ff80
+SF:0000000f7000000f800808ff00")%r(X11Probe,41,"550\x2012345\x200f8008707ff
+SF:07ff8000008088ff800000000f7000000f800808ff00")%r(FourOhFourRequest,41,"
+SF:550\x2012345\x200f8008707ff07ff8000008088ff800000000f7000000f800808ff00
+SF:")%r(LPDString,41,"550\x2012345\x200f8008707ff07ff8000008088ff800000000
+SF:f7000000f800808ff00")%r(LDAPSearchReq,41,"550\x2012345\x200f8008707ff07
+SF:ff8000008088ff800000000f7000000f800808ff00")%r(LDAPBindReq,41,"550\x201
+SF:2345\x200f8008707ff07ff8000008088ff800000000f7000000f800808ff00")%r(SIP
+SF:Options,41,"550\x2012345\x200f8008707ff07ff8000008088ff800000000f700000
+SF:0f800808ff00")%r(LANDesk-RC,41,"550\x2012345\x200f8008707ff07ff80000080
+SF:88ff800000000f7000000f800808ff00");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port25-TCP:V=7.99%I=7%D=4/27%Time=69EF4E4A%P=x86_64-pc-linux-gnu%r(NULL
+SF:,41,"550\x2012345\x200ff0808800cf0000ffff70000f877f70000c70008008ff8088
+SF:fff00")%r(Hello,41,"550\x2012345\x200ff0808800cf0000ffff70000f877f70000
+SF:c70008008ff8088fff00")%r(Help,41,"550\x2012345\x200ff0808800cf0000ffff7
+SF:0000f877f70000c70008008ff8088fff00")%r(GenericLines,41,"550\x2012345\x2
+SF:00ff0808800cf0000ffff70000f877f70000c70008008ff8088fff00")%r(GetRequest
+SF:,41,"550\x2012345\x200ff0808800cf0000ffff70000f877f70000c70008008ff8088
+SF:fff00")%r(HTTPOptions,41,"550\x2012345\x200ff0808800cf0000ffff70000f877
+SF:f70000c70008008ff8088fff00")%r(RTSPRequest,41,"550\x2012345\x200ff08088
+SF:00cf0000ffff70000f877f70000c70008008ff8088fff00")%r(RPCCheck,41,"550\x2
+SF:012345\x200ff0808800cf0000ffff70000f877f70000c70008008ff8088fff00")%r(D
+SF:NSVersionBindReqTCP,41,"550\x2012345\x200ff0808800cf0000ffff70000f877f7
+SF:0000c70008008ff8088fff00")%r(DNSStatusRequestTCP,41,"550\x2012345\x200f
+SF:f0808800cf0000ffff70000f877f70000c70008008ff8088fff00")%r(SSLSessionReq
+SF:,41,"550\x2012345\x200ff0808800cf0000ffff70000f877f70000c70008008ff8088
+SF:fff00")%r(TerminalServerCookie,41,"550\x2012345\x200ff0808800cf0000ffff
+SF:70000f877f70000c70008008ff8088fff00")%r(TLSSessionReq,41,"550\x2012345\
+SF:x200ff0808800cf0000ffff70000f877f70000c70008008ff8088fff00")%r(Kerberos
+SF:,41,"550\x2012345\x200ff0808800cf0000ffff70000f877f70000c70008008ff8088
+SF:fff00")%r(SMBProgNeg,41,"550\x2012345\x200ff0808800cf0000ffff70000f877f
+SF:70000c70008008ff8088fff00")%r(X11Probe,41,"550\x2012345\x200ff0808800cf
+SF:0000ffff70000f877f70000c70008008ff8088fff00")%r(FourOhFourRequest,41,"5
+SF:50\x2012345\x200ff0808800cf0000ffff70000f877f70000c70008008ff8088fff00"
+SF:)%r(LPDString,41,"550\x2012345\x200ff0808800cf0000ffff70000f877f70000c7
+SF:0008008ff8088fff00")%r(LDAPSearchReq,41,"550\x2012345\x200ff0808800cf00
+SF:00ffff70000f877f70000c70008008ff8088fff00")%r(LDAPBindReq,41,"550\x2012
+SF:345\x200ff0808800cf0000ffff70000f877f70000c70008008ff8088fff00")%r(SIPO
+SF:ptions,41,"550\x2012345\x200ff0808800cf0000ffff70000f877f70000c70008008
+SF:ff8088fff00")%r(LANDesk-RC,41,"550\x2012345\x200ff0808800cf0000ffff7000
+SF:0f877f70000c70008008ff8088fff00");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port26-TCP:V=7.99%I=7%D=4/27%Time=69EF4E4A%P=x86_64-pc-linux-gnu%r(NULL
+SF:,41,"550\x2012345\x200ff70800008ff800f007fff70880000087f70000007fcf7007
+SF:fff00")%r(GenericLines,41,"550\x2012345\x200ff70800008ff800f007fff70880
+SF:000087f70000007fcf7007fff00")%r(GetRequest,41,"550\x2012345\x200ff70800
+SF:008ff800f007fff70880000087f70000007fcf7007fff00")%r(HTTPOptions,41,"550
+SF:\x2012345\x200ff70800008ff800f007fff70880000087f70000007fcf7007fff00")%
+SF:r(RTSPRequest,41,"550\x2012345\x200ff70800008ff800f007fff70880000087f70
+SF:000007fcf7007fff00")%r(RPCCheck,41,"550\x2012345\x200ff70800008ff800f00
+SF:7fff70880000087f70000007fcf7007fff00")%r(DNSVersionBindReqTCP,41,"550\x
+SF:2012345\x200ff70800008ff800f007fff70880000087f70000007fcf7007fff00")%r(
+SF:DNSStatusRequestTCP,41,"550\x2012345\x200ff70800008ff800f007fff70880000
+SF:087f70000007fcf7007fff00")%r(Help,41,"550\x2012345\x200ff70800008ff800f
+SF:007fff70880000087f70000007fcf7007fff00")%r(SSLSessionReq,41,"550\x20123
+SF:45\x200ff70800008ff800f007fff70880000087f70000007fcf7007fff00")%r(Termi
+SF:nalServerCookie,41,"550\x2012345\x200ff70800008ff800f007fff70880000087f
+SF:70000007fcf7007fff00")%r(TLSSessionReq,41,"550\x2012345\x200ff70800008f
+SF:f800f007fff70880000087f70000007fcf7007fff00")%r(Kerberos,41,"550\x20123
+SF:45\x200ff70800008ff800f007fff70880000087f70000007fcf7007fff00")%r(SMBPr
+SF:ogNeg,41,"550\x2012345\x200ff70800008ff800f007fff70880000087f70000007fc
+SF:f7007fff00")%r(X11Probe,41,"550\x2012345\x200ff70800008ff800f007fff7088
+SF:0000087f70000007fcf7007fff00")%r(FourOhFourRequest,41,"550\x2012345\x20
+SF:0ff70800008ff800f007fff70880000087f70000007fcf7007fff00")%r(LPDString,4
+SF:1,"550\x2012345\x200ff70800008ff800f007fff70880000087f70000007fcf7007ff
+SF:f00")%r(LDAPSearchReq,41,"550\x2012345\x200ff70800008ff800f007fff708800
+SF:00087f70000007fcf7007fff00")%r(LDAPBindReq,41,"550\x2012345\x200ff70800
+SF:008ff800f007fff70880000087f70000007fcf7007fff00")%r(SIPOptions,41,"550\
+SF:x2012345\x200ff70800008ff800f007fff70880000087f70000007fcf7007fff00")%r
+SF:(LANDesk-RC,41,"550\x2012345\x200ff70800008ff800f007fff70880000087f7000
+SF:0007fcf7007fff00")%r(TerminalServer,41,"550\x2012345\x200ff70800008ff80
+SF:0f007fff70880000087f70000007fcf7007fff00");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port37-TCP:V=7.99%I=7%D=4/27%Time=69EF4E4A%P=x86_64-pc-linux-gnu%r(NULL
+SF:,41,"550\x2012345\x200fffffffffffc8088888008cffffff7887f87ffffff800000f
+SF:fff00")%r(GenericLines,41,"550\x2012345\x200fffffffffffc8088888008cffff
+SF:ff7887f87ffffff800000ffff00")%r(GetRequest,41,"550\x2012345\x200fffffff
+SF:ffffc8088888008cffffff7887f87ffffff800000ffff00")%r(HTTPOptions,41,"550
+SF:\x2012345\x200fffffffffffc8088888008cffffff7887f87ffffff800000ffff00")%
+SF:r(RTSPRequest,41,"550\x2012345\x200fffffffffffc8088888008cffffff7887f87
+SF:ffffff800000ffff00")%r(RPCCheck,41,"550\x2012345\x200fffffffffffc808888
+SF:8008cffffff7887f87ffffff800000ffff00")%r(DNSVersionBindReqTCP,41,"550\x
+SF:2012345\x200fffffffffffc8088888008cffffff7887f87ffffff800000ffff00")%r(
+SF:DNSStatusRequestTCP,41,"550\x2012345\x200fffffffffffc8088888008cffffff7
+SF:887f87ffffff800000ffff00")%r(Help,41,"550\x2012345\x200fffffffffffc8088
+SF:888008cffffff7887f87ffffff800000ffff00")%r(SSLSessionReq,41,"550\x20123
+SF:45\x200fffffffffffc8088888008cffffff7887f87ffffff800000ffff00")%r(Termi
+SF:nalServerCookie,41,"550\x2012345\x200fffffffffffc8088888008cffffff7887f
+SF:87ffffff800000ffff00")%r(TLSSessionReq,41,"550\x2012345\x200fffffffffff
+SF:c8088888008cffffff7887f87ffffff800000ffff00")%r(Kerberos,41,"550\x20123
+SF:45\x200fffffffffffc8088888008cffffff7887f87ffffff800000ffff00")%r(SMBPr
+SF:ogNeg,41,"550\x2012345\x200fffffffffffc8088888008cffffff7887f87ffffff80
+SF:0000ffff00")%r(X11Probe,41,"550\x2012345\x200fffffffffffc8088888008cfff
+SF:fff7887f87ffffff800000ffff00")%r(FourOhFourRequest,41,"550\x2012345\x20
+SF:0fffffffffffc8088888008cffffff7887f87ffffff800000ffff00")%r(LPDString,4
+SF:1,"550\x2012345\x200fffffffffffc8088888008cffffff7887f87ffffff800000fff
+SF:f00")%r(LDAPSearchReq,41,"550\x2012345\x200fffffffffffc8088888008cfffff
+SF:f7887f87ffffff800000ffff00")%r(LDAPBindReq,41,"550\x2012345\x200fffffff
+SF:ffffc8088888008cffffff7887f87ffffff800000ffff00")%r(SIPOptions,41,"550\
+SF:x2012345\x200fffffffffffc8088888008cffffff7887f87ffffff800000ffff00")%r
+SF:(LANDesk-RC,41,"550\x2012345\x200fffffffffffc8088888008cffffff7887f87ff
+SF:ffff800000ffff00")%r(TerminalServer,41,"550\x2012345\x200fffffffffffc80
+SF:88888008cffffff7887f87ffffff800000ffff00");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port53-TCP:V=7.99%I=7%D=4/27%Time=69EF4E4A%P=x86_64-pc-linux-gnu%r(NULL
+SF:,13,"550\x204m2v4\x20FUZZ_HERE")%r(DNSVersionBindReqTCP,13,"550\x204m2v
+SF:4\x20FUZZ_HERE")%r(DNSStatusRequestTCP,13,"550\x204m2v4\x20FUZZ_HERE")%
+SF:r(DNS-SD-TCP,13,"550\x204m2v4\x20FUZZ_HERE")%r(GenericLines,13,"550\x20
+SF:4m2v4\x20FUZZ_HERE")%r(GetRequest,13,"550\x204m2v4\x20FUZZ_HERE")%r(HTT
+SF:POptions,13,"550\x204m2v4\x20FUZZ_HERE")%r(RTSPRequest,13,"550\x204m2v4
+SF:\x20FUZZ_HERE")%r(RPCCheck,13,"550\x204m2v4\x20FUZZ_HERE")%r(Help,13,"5
+SF:50\x204m2v4\x20FUZZ_HERE")%r(SSLSessionReq,13,"550\x204m2v4\x20FUZZ_HER
+SF:E")%r(TerminalServerCookie,13,"550\x204m2v4\x20FUZZ_HERE")%r(TLSSession
+SF:Req,13,"550\x204m2v4\x20FUZZ_HERE")%r(Kerberos,13,"550\x204m2v4\x20FUZZ
+SF:_HERE")%r(SMBProgNeg,13,"550\x204m2v4\x20FUZZ_HERE")%r(X11Probe,13,"550
+SF:\x204m2v4\x20FUZZ_HERE")%r(FourOhFourRequest,13,"550\x204m2v4\x20FUZZ_H
+SF:ERE")%r(LPDString,13,"550\x204m2v4\x20FUZZ_HERE")%r(LDAPSearchReq,13,"5
+SF:50\x204m2v4\x20FUZZ_HERE")%r(LDAPBindReq,13,"550\x204m2v4\x20FUZZ_HERE"
+SF:)%r(SIPOptions,13,"550\x204m2v4\x20FUZZ_HERE")%r(LANDesk-RC,13,"550\x20
+SF:4m2v4\x20FUZZ_HERE")%r(TerminalServer,13,"550\x204m2v4\x20FUZZ_HERE")%r
+SF:(NCP,13,"550\x204m2v4\x20FUZZ_HERE")%r(NotesRPC,13,"550\x204m2v4\x20FUZ
+SF:Z_HERE")%r(JavaRMI,13,"550\x204m2v4\x20FUZZ_HERE")%r(WMSRequest,13,"550
+SF:\x204m2v4\x20FUZZ_HERE")%r(oracle-tns,13,"550\x204m2v4\x20FUZZ_HERE")%r
+SF:(ms-sql-s,13,"550\x204m2v4\x20FUZZ_HERE")%r(afp,13,"550\x204m2v4\x20FUZ
+SF:Z_HERE")%r(giop,13,"550\x204m2v4\x20FUZZ_HERE");
+Service Info: Hosts: VTcVYPQ, NLUw, WkphoECi, cQqltYXu, plX; OSs: Linux, Windows, Unix, IOS; Devices: router, broadband router, firewall, specialized, VoIP phone; CPE: cpe:/o:linux:linux_kernel, cpe:/h:linksys:wap11, cpe:/h:arris:tm602g, cpe:/o:microsoft:windows, cpe:/h:securecomputing:sidewinder
+
+Host script results:
+|_smb2-time: Protocol negotiation failed (SMB2)
