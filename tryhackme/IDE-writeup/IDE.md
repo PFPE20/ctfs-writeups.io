@@ -10,16 +10,16 @@ This Write-up/Walkthrough provides my process for the **IDE** *(THM)* CTF. Here 
 
 As I ever do, let's start with the respective scan:
 
-```bash
+```
 nmap -p- --open --min-rate 5000 -sS -Pn -n 10.112.181.243
 
   21/tcp    open  ftp
   22/tcp    open  ssh
   80/tcp    open  http
   62337/tcp open  unknown
+```
 
-###
-
+```
 nmap -p21,22,80,62337 -sV -sC 10.112.181.243 
 
 21/tcp    open  ftp     vsftpd 3.0.3
@@ -62,7 +62,7 @@ I found 4 ports opened:
 
 ## Pasive Recognition
 
-```bash
+```
 whatweb 10.112.181.243
 
   ERROR Opening: https://10.112.181.243 - Connection refused - connect(2) for "10.112.181.243" port 443
@@ -75,7 +75,7 @@ Ok, so we go to the website running on port 62337:
 
 We found a Log-in form. We pause just here. Do you remember that we found port 21 (FTP) opened? Also it allows to get in as "Anonymous", let's find out
 
-```bash
+```
 ftp 10.112.181.243 21
 
 Connected to 10.112.181.243.
@@ -117,7 +117,7 @@ local: - remote: -
 
 Nice, we got a file, let's find out what it is:
 
-```bash
+```
 mv ./- file
 
 wc -l file
@@ -154,7 +154,7 @@ The exploit offers RCE, so let's get started:
 
 ![searchsploit](./searchsploit-pckg.png)
 
-```bash
+```
 searchsploit -m multiple/webapps/49705.py
 
     Exploit: Codiad 2.8.4 - Remote Code Execution (Authenticated)

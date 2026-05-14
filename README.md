@@ -40,6 +40,7 @@ This repository provides solutions to CTFs (*Capture the flag*) from various pla
 | Thompson | Easy | Default Credentials, Malicious WAR File Upload → RCE | [Writeup](./tryhackme/Thompson-writeup/THOMPSON.md) |
 | Valley | Easy | PCAP Analysis, Python Library Hijacking | [Writeup](./tryhackme/Valley-writeup/VALLEY.md) |
 | Cheese | Easy | LFI, SQLi, RCE | [Writeup](./tryhackme/Cheese-writeup/CHEESE.md) |
+| U.A. High School | Easy | RCE | [Writeup](./tryhackme/UAHighSchool-writeup/UAHS.md) |
 
 ### OverTheWire
 

