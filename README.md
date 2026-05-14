@@ -5,8 +5,8 @@
 <!-- https://shields.io/badges -->
 [![THM](https://img.shields.io/badge/TryHackMe-151C2B?style=flat&logo=tryhackme&logoColor=A20606 "THM")](https://tryhackme.com/p/pedrofparmentiere)
 [![OTW](https://img.shields.io/badge/OverTheWire-333?style=flat "OTW")](https://overthewire.org/wargames/)
+[![HTB](https://img.shields.io/badge/HackTheBox-0B121F?style=flat&logo=hackthebox&logoColor=9FEF00 "HTB")](https://profile.hackthebox.com/profile/019e2307-2214-710c-a1ff-dbf037d88459)
 [![PicoCTF](https://img.shields.io/badge/PicoCTF-C41230?style=flat "PicoCTF")](https://play.picoctf.org/users/pfpe20)
-![HTB](https://img.shields.io/badge/HackTheBox-0B121F?style=flat&logo=hackthebox&logoColor=9FEF00 "HTB")
 
 *My personal collection of CTF write-ups and challenge solutions*
 
@@ -45,12 +45,15 @@ This repository provides solutions to CTFs (*Capture the flag*) from various pla
 
 | Name | Difficulty | Type | Write-up |
 | ---- | ---------- | ---- | -------- |
-| Leviathan | Easy | UNIX based commands | [Writeup](./overthewire/LEVIATHAN.md) |
-
-### PicoCTF
-
-> *Coming soon*
+| Leviathan | Easy | Reverse Engineering | [Writeup](./overthewire/LEVIATHAN.md) |
+| Krypton | Easy | Criptography | [Writeup](./overthewire/krypton/KRIPTON.md) |
 
 ### Hack The Box
+
+| Name | Difficulty | Type | Write-up |
+| ---- | ---------- | ---- | -------- |
+| Cap | Easy | IDOR, Capability abuse | [Writeup](./hackthebox/Cap-writeup-htb/CAP.md) |
+
+### PicoCTF
 
 > *Coming soon*
