@@ -4,7 +4,7 @@
 # Leviathan
 
 * **Dificultad**: Fácil
-* **Tipo de reto**: Comandos de sistemas operativos basados en *UNIX*
+* **Tipo de reto**: Reverse Engineering (Ingeniería inversa)
 
 **NOTA**: Cualquier revelación de contraseña ha sido cambiada por **PASSWORD**
 
@@ -14,7 +14,7 @@ Buscando un poco, encontramos en el directorio del usuario (*leviathan0*) un dir
 
 Comandos: `grep -i pass`
 
-```bash
+```
 leviathan0@leviathan:~$ pwd
 /home/leviathan0
 leviathan0@leviathan:~$ ls -la
@@ -50,7 +50,7 @@ Comandos:
 - `ltrace ./binario`
 - `file binario` → Yo suelo usar este comando para saber si estoy lidiando con un binario compilado dinámicamente o estáticamente, de esa forma sabré si debo alternar entre *ltrace*, *strace* o si directamente debo usar *gdb*
 
-```bash
+```
 leviathan1@leviathan:~$ pwd
 /home/leviathan1
 leviathan1@leviathan:~$ ls -la
@@ -116,7 +116,7 @@ Comandos:
 - `mktemp -d`
 - `ln -s /archivo /ruta`
 
-```bash
+```
 leviathan2@leviathan:~$ pwd
 /home/leviathan2
 leviathan2@leviathan:~$ ls -la
@@ -182,7 +182,7 @@ En el directorio encontraremos un binario que pide un *string*, si le pasamos un
 
 Comandos: `ltrace`
 
-```bash
+```
 leviathan3@leviathan:~$ ls -la
 total 40
 drwxr-xr-x   2 root       root        4096 Apr  3 15:19 .
@@ -225,7 +225,7 @@ Comandos:
 - `which`
 - `python3 -c`
 
-```bash
+```
 leviathan4@leviathan:~$ ls -la
 total 24
 drwxr-xr-x   3 root root       4096 Apr  3 15:19 .
@@ -262,7 +262,7 @@ Comandos:
 - `ltrace`
 - `ln -s /archivo /ruta`
 
-```bash
+```
 leviathan5@leviathan:~$ ls -la
 total 36
 drwxr-xr-x   2 root       root        4096 Apr  3 15:19 .
@@ -307,7 +307,7 @@ Comandos:
 - `whoami`
 - `cat`
 
-```bash
+```
 leviathan6@leviathan:~$ ls -la
 total 36
 drwxr-xr-x   2 root       root        4096 Apr  3 15:19 .
@@ -335,3 +335,5 @@ PASSWORD
 ```
 
 Hasta aquí el write-up sobre **leviathan** ya que no hay más retos luego, espero que les guste y les pueda ser útil a aquellos que necesitan ayuda con la resolución del CTF.
+
+[*← Back to index*](../README.md)
